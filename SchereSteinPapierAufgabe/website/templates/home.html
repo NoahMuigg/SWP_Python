@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Home</h1>
-</body>
+<html>
+  <head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+  <body>
+    <h1>Balkendiagramm</h1>
+    <div id="plot"></div>
+    <script>
+      var plot_json = {{ plot_json|tojson|safe }};
+      Plotly.react('plot', JSON.parse(plot_json));
+    </script>
+    <a href="http://127.0.0.1:5000/">
+        <button>Zur Statistik</button>
+      </a>
+  </body>
 </html>

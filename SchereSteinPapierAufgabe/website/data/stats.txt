@@ -1,0 +1,1 @@
+{"Unentschieden": 4, "Gewonnen": 6, "Verloren": 5, "Stein": 4, "Papier": 2, "Schere": 5, "Spock": 3, "Echse": 1}
