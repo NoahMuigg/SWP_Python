@@ -80,7 +80,7 @@ def combine(a, b):
         dataFile[i] = a[i] + b[i]
     return a
 
-def home():  #Menu hier wird alles angezeigt was man wählen kann
+def home():
     los = True
     while los == True:
         wahlen = input("Waehlen Sie aus zwischen: spiel, stats, speichern, loeschen oder exit: ")
