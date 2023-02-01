@@ -13,7 +13,7 @@ class verketteteListe:
     def allesAusgeben(self):
         aktuelleListe = self.startElement
         while aktuelleListe is not None:
-            print(aktuelleListe.data, end=" ")
+            print(aktuelleListe.data)
             aktuelleListe = aktuelleListe.next
 
     # Mit dieser Methode kann man einen Wert am Ende der Liste hinzufügen 
@@ -25,7 +25,6 @@ class verketteteListe:
             while aktuelleListe.next is not None:
                 aktuelleListe = aktuelleListe.next
             aktuelleListe.next = liste(Wert)
-
 
     # Die Länge der Liste wird ausgegeben
     def längeListe(self):
@@ -50,7 +49,8 @@ class verketteteListe:
         elemNeu = liste(Wert)
         aktuelleListe = self.startElement
         zähler = 1
-        while aktuelleListe.next is not None and zähler <= Position-1:
+        intPosition = int(Position)
+        while aktuelleListe.next is not None and zähler <= intPosition-1:
             aktuelleListe = aktuelleListe.next
             zähler += 1
         if Position == 1:
@@ -59,10 +59,24 @@ class verketteteListe:
         else:
             elemNeu.next = aktuelleListe.next
             aktuelleListe.next = elemNeu
+    
+    def elemLöschen(self, Position):
+        aktuelleListe = self.startElement
+        zähler = 1
+        vorher = None
+        intPosition = int(Position)
+        while aktuelleListe.next is not None and zähler <= intPosition-1:
+            vorher = aktuelleListe
+            aktuelleListe = aktuelleListe.next
+            zähler += 1
+        if Position == 1:
+            self.startElement = aktuelleListe.next
+            del aktuelleListe
+        else:
+            vorher.next = aktuelleListe.next
+            del aktuelleListe
 
-    def erstellen(self, wert):
-        neueListe = liste(wert)
-        self.startElement = neueListe
+
 
 def home():
     vListe = verketteteListe()
@@ -73,7 +87,8 @@ def home():
     while los == True:
         eingabe = input("Was möchten Sie machen? Sie können auswählen zwischen: " 
         "\nGesamte Liste ausgeben (ausgabe) \neinen Wert am Ende der Liste anfügen (hinten) "
-        "\nlänge der Liste (l) \nSumme der Werte (s) \neinen Wert an einer beliebigen Position einfügen (beliebig) \nverlassen (v): ")
+        "\nlänge der Liste (l) \nSumme der Werte (s) \neinen Wert an einer beliebigen Position einfügen (beliebig)" 
+        "\nElement löschen (löschen)\nverlassen (v): ")
         if eingabe == "ausgabe":
             vListe.allesAusgeben()
             print()
@@ -89,43 +104,18 @@ def home():
             print()
         if eingabe == "beliebig":
             a = input("Bitte geben Sie einen Wert ein:")
-            b = input("Bitte geben Sie einen Position, an welcher der gewünschte Wert eingefügt werden soll:")
+            b = input("Bitte geben Sie einen Position, an welcher der gewünschte Wert eingefügt werden soll: ")
             vListe.elemBeliebigEinfügen(a,b)
             print()
         if eingabe == "v":
             exit()
+        if eingabe == "löschen":
+            a = input("Bitte eine Position eingeben, welche Sie löschen wollen: ")
+            vListe.elemLöschen(a)
+            print()
 
 
 
 if __name__ == '__main__':
     
     home()
-
-    
-
-    # Alle Elemente aus der verketteten Liste ausgeben
-    #print("Automatisch ausgegeben + Händisch hinzugefügt")
-    #vListe.allesAusgeben()
-    #print()
-
-    # Element hinten hinzufügen
-    #print("Automatisch ausgegeben + Automatisch hinzugefügt")
-    #vListe.elementHintenAnfügen(4)
-    #vListe.allesAusgeben()
-    #print()
-
-    # Länge der Liste ausgeben
-    #vListe.elementHintenAnfügen(5)
-    #vListe.längeListe()
-
-    # Summe der Elemente in der Liste 
-    #vListe.sum()
-
-    #vListe.elemBeliebigEinfügen(8,1)
-    #vListe.allesAusgeben()
-    #vListe.längeListe()
-    #vListe.sum()
-    #vListe.elementHintenAnfügen(18)
-    #vListe.allesAusgeben()
-    #vListe.längeListe()
-    #vListe.sum()
