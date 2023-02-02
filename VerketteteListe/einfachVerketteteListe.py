@@ -60,6 +60,7 @@ class verketteteListe:
             elemNeu.next = aktuelleListe.next
             aktuelleListe.next = elemNeu
     
+    # Mit dieser Methode kann man ein belibieges Element aus der Liste löschen
     def elemLöschen(self, Position):
         aktuelleListe = self.startElement
         zähler = 1
