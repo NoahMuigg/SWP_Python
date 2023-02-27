@@ -33,7 +33,7 @@ class verketteteListe:
         while aktuelleListe is not None:
             zähler += 1
             aktuelleListe = aktuelleListe.next
-        print("Die aktuelle Liste besitzt", zähler, "Elemente")
+        print("Die aktuelle Liste besitzt", zähler, "Elemente") 
 
     # Die Werte der Liste werden zusammengezählt und ausgegeben
     def sum(self):
