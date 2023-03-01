@@ -1,6 +1,6 @@
-package Pizza;
+package PizzaBackage;
 
-public class calzone extends pizza{
+public class Calzone extends Pizza{
     
     public void backen(){
         System.out.println("Calzone wird gebacken");

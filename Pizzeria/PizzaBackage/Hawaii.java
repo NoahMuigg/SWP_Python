@@ -1,6 +1,6 @@
-package Pizza;
+package PizzaBackage;
 
-public class hawaii extends pizza{
+public class Hawaii extends Pizza{
     
     public void backen(){
         System.out.println("Hawaii wird gebacken");

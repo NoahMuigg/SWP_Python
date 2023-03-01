@@ -1,27 +1,32 @@
-import Pizza.calzone;
-import Pizza.hawaii;
-import Pizza.pizza;
-import Pizza.quattroStationi;
-import Pizza.salami;
+import PizzaBackage.Calzone;
+import PizzaBackage.Hawaii;
+import PizzaBackage.Pizza;
+import PizzaBackage.QuattroStationi;
+import PizzaBackage.Salami;
+import PizzeriaBackage.Pizzeria;
 
 
-public class pizzaFactory {
+class PizzaFactory extends Pizzeria{
 
-    public pizza newPizza(String pizzaname){
+    @Override
+    protected Pizza erstellPizza(String pizzaname){
 
-        pizza pizza = null;
+        Pizza pizza = null;
 
         if(pizzaname.equals("Calzone")){
-            pizza = new calzone();
+            pizza = new Calzone();
         }
         else if(pizzaname.equals("Salami")){
-            pizza = new salami();
+            pizza = new Salami();
         }
         else if(pizzaname.equals("Hawaii")){
-            pizza = new hawaii();
+            pizza = new Hawaii();
         }
         else if(pizzaname.equals("Quattro Stationi")){
-            pizza = new quattroStationi();
+            pizza = new QuattroStationi();
+        }
+        else{
+            System.out.println("Falsche eingabe!");
         }
 
         return pizza;

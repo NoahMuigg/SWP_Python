@@ -1,6 +1,6 @@
-package Pizza;
+package PizzaBackage;
 
-public abstract class pizza {
+public abstract class Pizza {
     
     public abstract void backen();
     public abstract void schneiden();
