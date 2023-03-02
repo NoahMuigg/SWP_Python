@@ -1,4 +1,4 @@
-package PizzaBackage;
+package PizzaPackage;
 
 public class Salami extends Pizza{
     
