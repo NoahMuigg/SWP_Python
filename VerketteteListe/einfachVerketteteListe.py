@@ -40,7 +40,7 @@ class verketteteListe:
         aktuelleListe = self.startElement
         summe = 0
         while aktuelleListe is not None:
-            summe += aktuelleListe.data
+            summe += int(aktuelleListe.data)
             aktuelleListe = aktuelleListe.next
         print("Die Summe der aktuellen Liste beträgt:", summe)
     
@@ -118,5 +118,4 @@ def home():
 
 
 if __name__ == '__main__':
-    
     home()
